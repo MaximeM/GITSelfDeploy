@@ -1,0 +1,22 @@
+{
+  "name": "ubuntu-nodejs-git-auto-deploy",
+  "version": "1.0.0",
+  "description": "Automatically Deploy versions from GITHUB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Encke/Ubuntu-NodeJS-Git-Auto-Deploy.git"
+  },
+  "author": "Encke Technologies SRL",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Encke/Ubuntu-NodeJS-Git-Auto-Deploy/issues"
+  },
+  "homepage": "https://github.com/Encke/Ubuntu-NodeJS-Git-Auto-Deploy#readme",
+  "dependencies": {
+    "nk-node": "^1.1.7"
+  }
+}
