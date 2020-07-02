@@ -15,6 +15,8 @@ Step 6: Install your repository
   #cd /var ; rm -rf www/ ; mkdir www/ ; cd www/ ; git clone git@github.com:MYUSERNAMEINGITHUB/MYREPOSITORYINGITHUB . ; npm i ; pm2 start index.js ; cd /var/selfDeploy ; pm2 start index.js ; pm2 save
 Step 7: Setup webhook for updates
   open your repository link and click on settings, then Webhooks and add "http://IPOFTHESERVER:3420/" to the list set to only POST and send the event.
+Step 8: Reboot
+  #reboot
 
 Your Repo is now ready for auto-deployments!
 
