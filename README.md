@@ -10,7 +10,7 @@ Step 3: Install SSH Key to GitHub
 Step 4: Setup a hostname (and install NGINX server host configuration)
   #echo "newserver.com" > /etc/hostname
 Step 5: Install Stack and auto deployer on server
-  #apt update ; apt -y upgrade ; apt -y autoremove ; apt install -y git mongodb nodejs npm certbot nginx python3-certbot-nginx ; npm install -g pm2 ; pm2 startup; mkdir /var/selfDeploy ; cd /var/selfDeploy ; git clone git@github.com:Encke/Ubuntu-NodeJS-Git-Auto-Deploy . ; npm i
+  #apt update ; apt -y upgrade ; apt -y autoremove ; apt install -y git mongodb nodejs npm certbot nginx python3-certbot-nginx ; npm install -g pm2 ; pm2 startup; rm -rf /var/selfDeploy ; mkdir /var/selfDeploy ; cd /var/selfDeploy ; git clone git@github.com:Encke/Ubuntu-NodeJS-Git-Auto-Deploy . ; npm i
 Step 6: Install your repository
   #cd /var ; rm -rf www/ ; mkdir www/ ; cd www/ ; git clone git@github.com:MYUSERNAMEINGITHUB/MYREPOSITORYINGITHUB . ; npm i ; pm2 start index.js ; cd /var/selfDeploy ; pm2 start index.js ; pm2 save
 Step 7: Setup webhook for updates
