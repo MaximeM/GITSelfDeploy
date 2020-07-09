@@ -42,8 +42,7 @@ pm2 startup
 rm -rf /var/selfDeploy
 mkdir /var/selfDeploy
 cd /var/selfDeploy
-git clone git@github.com:Encke/GITSelfDeploy .
-npm i
+npm i https://github.com:Encke/GITSelfDeploy -g
 ```
 
 ## Step 6
