@@ -1,11 +1,14 @@
 {
   "name": "gitselfdeploy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "preferGlobal": true,
   "description": "Automatically Deploy versions from Github",
-  "main": "selfDeploy",
+  "main": "gitselfdeploy",
   "engines": {
     "node": ">=10.0.0"
+  },
+  "bin": {
+    "cordova": "./bin/cordova"
   },
   "scripts": {
     "start": "pm2 start gitselfdeploy"
