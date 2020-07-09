@@ -1,6 +1,6 @@
 {
   "name": "gitselfdeploy",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "preferGlobal": true,
   "description": "Global Daemon to Automatically Deploy versions from Github",
   "main": "gitselfdeploy",
@@ -15,7 +15,7 @@
     "url": "git+https://github.com/Encke/GITSelfDeploy.git"
   },
   "author": "Encke Technologies SRL",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Encke/GITSelfDeploy/issues"
   },
