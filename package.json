@@ -1,8 +1,8 @@
 {
   "name": "gitselfdeploy",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "preferGlobal": true,
-  "description": "Automatically Deploy versions from Github",
+  "description": "Global Daemon to Automatically Deploy versions from Github",
   "main": "gitselfdeploy",
   "engines": {
     "node": ">=10.0.0"

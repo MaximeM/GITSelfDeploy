@@ -37,12 +37,8 @@ apt update
 apt -y upgrade
 apt -y autoremove
 apt install -y git mongodb nodejs npm certbot nginx python3-certbot-nginx
-npm install -g pm2
+npm i -g pm2 gitselfdeploy
 pm2 startup
-rm -rf /var/selfDeploy
-mkdir /var/selfDeploy
-cd /var/selfDeploy
-npm i gitselfdeploy -g
 ```
 
 ## Step 6
@@ -58,8 +54,7 @@ cd www/
 git clone git@github.com:MYUSERNAMEINGITHUB/MYREPOSITORYINGITHUB .
 npm i
 pm2 start index.js
-cd /var/selfDeploy
-pm2 start selfDeploy.js
+pm2 start gitselfdeploy
 pm2 save
 ```
 
