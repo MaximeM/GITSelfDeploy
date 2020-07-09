@@ -1,6 +1,6 @@
 {
   "name": "gitselfdeploy",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "preferGlobal": true,
   "description": "Automatically Deploy versions from Github",
   "main": "gitselfdeploy",
@@ -8,7 +8,7 @@
     "node": ">=10.0.0"
   },
   "bin": {
-    "gitselfdeploy": "pm2 start gitselfdeploy.js"
+    "gitselfdeploy": "gitselfdeploy.js"
   },
   "repository": {
     "type": "git",
