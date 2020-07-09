@@ -1,4 +1,4 @@
-# Ubuntu-NodeJS-Git-Auto-Deploy
+# GITSelfDeploy
 
 Use an automated service to manage the auto deployment of nodeJS systems on Ubuntu based on Express and PM2
 
@@ -42,7 +42,7 @@ pm2 startup
 rm -rf /var/selfDeploy
 mkdir /var/selfDeploy
 cd /var/selfDeploy
-git clone git@github.com:Encke/Ubuntu-NodeJS-Git-Auto-Deploy .
+git clone git@github.com:Encke/GITSelfDeploy .
 npm i
 ```
 
