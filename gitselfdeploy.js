@@ -11,7 +11,7 @@ const SSLCert = ( ( config.ssl && fs.existsSync( config.ssl + '/fullchain.pem' )
 
 const checkAndRunDeploy = ( req, res ) => {
   try	{
-    console.log( req.params )
+    console.log( req )
     //console.log( module.exports.shell( '/bin/sh ' + __dirname + '/gitDeploy.sh ' + deployTo + ' ' + parseInt( pm2ProcessNumber ).toString() ) )
   }	catch( e )	{
     console.log( e )
