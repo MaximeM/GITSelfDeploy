@@ -1,6 +1,6 @@
 {
-  "name": "@Encke/gitselfdeploy",
-  "version": "1.0.8",
+  "name": "gitselfdeploy",
+  "version": "1.1.0",
   "preferGlobal": true,
   "description": "Global Daemon to Automatically Deploy versions from Github",
   "main": "gitselfdeploy",
@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/Encke/GITSelfDeploy#readme",
   "dependencies": {
-    "nk-node": "^1.1.12"
-  },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "http": "0.0.1-security",
+    "https": "^1.0.0"
+  }
 }

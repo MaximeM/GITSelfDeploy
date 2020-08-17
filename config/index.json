@@ -1,0 +1,4 @@
+{
+  "ssl": "/var/selfDeploySSLCert",
+  "port": "3420"
+}
