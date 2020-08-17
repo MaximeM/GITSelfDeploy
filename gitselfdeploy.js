@@ -17,7 +17,7 @@ const checkAndRunDeploy = ( req, res ) => {
   }	catch( e )	{}
   if( requestData && requestData.ref && ( requestData.ref == config.branch ) ) {
     try	{
-      console.log( execSync( ( 'git pull ; npm i ; pm2 reload ' + config.pm2ProcessIndex ), { cwd: config.deployTo } ) )
+      console.log( execSync( 'git pull', { cwd: config.deployTo } ).toString(), execSync( 'npm i', { cwd: config.deployTo } ).toString(), execSync( ( 'pm2 reload ' + config.pm2ProcessIndex + ' --update-env' ), { cwd: config.deployTo } ).toString() )
     }	catch( e )	{}
   }
   res.end( '' )
