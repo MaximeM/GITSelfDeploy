@@ -1,6 +1,6 @@
 {
   "name": "gitselfdeploy",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "preferGlobal": true,
   "description": "Global Daemon to Automatically Deploy versions from Github",
   "main": "gitselfdeploy",

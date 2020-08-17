@@ -11,7 +11,7 @@ const SSLCert = ( ( config.ssl && fs.existsSync( config.ssl + '/fullchain.pem' )
 
 const checkAndRunDeploy = ( req, res ) => {
   try	{
-    console.log( req )
+    console.log( req.params )
     //console.log( module.exports.shell( '/bin/sh ' + __dirname + '/gitDeploy.sh ' + deployTo + ' ' + parseInt( pm2ProcessNumber ).toString() ) )
   }	catch( e )	{
     console.log( e )
@@ -24,7 +24,7 @@ app.use( express.urlencoded( { limit: '50mb', extended: false } ) )
 app.use( express.json( { limit: '50mb', extended: false } ) )
 
 app.post( '/', checkAndRunDeploy )
-app.get( '*', checkAndRunDeploy )
+app.get( '*', res => res.end( '' ) )
 
 if( SSLKey && SSLCert )	{
   https.createServer( { key: SSLKey, cert: SSLCert }, app ).listen( config.port, () => console.log( 'Githook enabled with SSL' ) )
