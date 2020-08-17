@@ -20,6 +20,8 @@ const checkAndRunDeploy = ( req, res ) => {
 }
 
 const app	= express()
+app.use( express.urlencoded( { limit: '50mb', extended: false } ) )
+app.use( express.json( { limit: '50mb', extended: false } ) )
 
 app.post( '/', checkAndRunDeploy )
 app.get( '*', checkAndRunDeploy )
