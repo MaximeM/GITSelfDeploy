@@ -3,6 +3,7 @@ const express				= require( 'express' )
 const fs						= require( 'fs' )
 const http					= require( 'http' )
 const https					= require( 'https' )
+const bodyParser    = require( 'body-parser' )
 
 const config        = require( './config' )
 
@@ -10,20 +11,26 @@ const SSLKey = ( ( config.ssl && fs.existsSync( config.ssl + '/privkey.pem' ) )?
 const SSLCert = ( ( config.ssl && fs.existsSync( config.ssl + '/fullchain.pem' ) )? fs.readFileSync( ( config.ssl + '/fullchain.pem' ), 'utf8' ).trim(): null )
 
 const checkAndRunDeploy = ( req, res ) => {
+  let requestData = null
   try	{
-    console.log( req.params )
-    //console.log( module.exports.shell( '/bin/sh ' + __dirname + '/gitDeploy.sh ' + deployTo + ' ' + parseInt( pm2ProcessNumber ).toString() ) )
-  }	catch( e )	{
-    console.log( e )
+    requestData = JSON.parse( req.body.payload )
+  }	catch( e )	{}
+  if( requestData && requestData.ref && ( requestData.ref == config.branch ) ) {
+    try	{
+      console.log( execSync( ( 'git pull ; npm i ; pm2 reload ' + config.pm2ProcessIndex ), { cwd: config.deployTo } ) )
+    }	catch( e )	{}
   }
   res.end( '' )
 }
 
 const app	= express()
-app.use( express.urlencoded( { limit: '50mb', extended: false } ) )
-app.use( express.json( { limit: '50mb', extended: false } ) )
+
+app.use( bodyParser.urlencoded( { extended: false } ) )
+
+app.use( bodyParser.json() )
 
 app.post( '/', checkAndRunDeploy )
+
 app.get( '*', res => res.end( '' ) )
 
 if( SSLKey && SSLCert )	{

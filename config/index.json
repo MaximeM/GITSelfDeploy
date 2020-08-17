@@ -1,4 +1,7 @@
 {
   "ssl": "/var/selfDeploySSLCert",
-  "port": "3420"
+  "port": "3420",
+  "branch": "refs/heads/master",
+  "pm2ProcessIndex": "index",
+  "deployTo": "/var/www"
 }

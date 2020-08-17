@@ -1,6 +1,6 @@
 {
   "name": "gitselfdeploy",
-  "version": "1.1.2",
+  "version": "1.1.13",
   "preferGlobal": true,
   "description": "Global Daemon to Automatically Deploy versions from Github",
   "main": "gitselfdeploy",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Encke/GITSelfDeploy#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "http": "0.0.1-security",
