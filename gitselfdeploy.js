@@ -11,13 +11,14 @@ const SSLKey = ( ( config.ssl && fs.existsSync( config.ssl + '/privkey.pem' ) )?
 const SSLCert = ( ( config.ssl && fs.existsSync( config.ssl + '/fullchain.pem' ) )? fs.readFileSync( ( config.ssl + '/fullchain.pem' ), 'utf8' ).trim(): null )
 
 const checkAndRunDeploy = ( req, res ) => {
-  console.log( 'Githook triggered ' + req.body)
+  console.log( 'Githook triggered ' + req.body.payload)
   let requestData = null
   try	{
     requestData = JSON.parse( req.body.payload )
   }	catch( e )	{}
   if( requestData && requestData.ref && ( requestData.ref == config.branch ) ) {
     try	{
+      console.log( 'Githook running deploy' );
       console.log( execSync( 'git pull', { cwd: config.deployTo } ).toString(), execSync( 'npm i', { cwd: config.deployTo } ).toString(), execSync( ( 'pm2 reload ' + config.pm2ProcessIndex + ' --update-env' ), { cwd: config.deployTo } ).toString() )
     }	catch( e )	{
       console.log( e )
