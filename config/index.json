@@ -2,6 +2,6 @@
   "ssl": "/var/selfDeploySSLCert",
   "port": "3420",
   "branch": "refs/heads/main",
-  "pm2ProcessIndex": "index",
+  "pm2ProcessIndex": "server",
   "deployTo": "/var/www/MetaServ"
 }
