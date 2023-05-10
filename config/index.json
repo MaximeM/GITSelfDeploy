@@ -3,5 +3,5 @@
   "port": "3420",
   "branch": "refs/heads/main",
   "pm2ProcessIndex": "index",
-  "deployTo": "/var/www"
+  "deployTo": "/var/www/MetaServ"
 }
