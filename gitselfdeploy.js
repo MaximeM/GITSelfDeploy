@@ -11,7 +11,7 @@ const SSLKey = ( ( config.ssl && fs.existsSync( config.ssl + '/privkey.pem' ) )?
 const SSLCert = ( ( config.ssl && fs.existsSync( config.ssl + '/fullchain.pem' ) )? fs.readFileSync( ( config.ssl + '/fullchain.pem' ), 'utf8' ).trim(): null )
 
 const checkAndRunDeploy = ( req, res ) => {
-  console.log( 'Githook triggered' )
+  console.log( 'Githook triggered ' + req.body)
   let requestData = null
   try	{
     requestData = JSON.parse( req.body.payload )
